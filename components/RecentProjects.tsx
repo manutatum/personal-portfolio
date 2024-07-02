@@ -19,7 +19,7 @@ const RecentProjects = () => {
                                     <Image
                                         src="/bg.png"
                                         alt="bg-img"
-                                        layout="fill"
+                                        fill
                                         objectFit="cover"
                                     />
                                 </div>
@@ -48,7 +48,7 @@ const RecentProjects = () => {
                                             <Image
                                                 src={icon}
                                                 alt={icon}
-                                                layout="fill"
+                                                fill
                                                 objectFit="cover"
                                                 className="p-2"
                                             />

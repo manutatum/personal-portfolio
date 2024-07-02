@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
 import { ThemeProvider } from "./provider";
-import * as Sentry from "@sentry/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 

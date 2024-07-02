@@ -9,6 +9,7 @@ import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 import { GlobeDemo } from "./GridGlobe";
 import { personalData } from "@/data";
+import Image from "next/image";
 
 export const BentoGrid = ({
   className,
@@ -63,8 +64,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = personalData.email;
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(personalData.email);
     setCopied(true);
   };
 
@@ -83,10 +83,12 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
+              fill
+              style={{ objectFit: 'cover' }}
+              className={cn(imgClassName)}
             />
           )}
         </div>
@@ -95,10 +97,12 @@ export const BentoGridItem = ({
             } `}
         >
           {spareImg && (
-            <img
+            <Image
               src={spareImg}
               alt={spareImg}
-              className="object-cover object-center w-full h-full"
+              layout="intrinsic"
+              width={50}
+              height={50}
             />
           )}
         </div>

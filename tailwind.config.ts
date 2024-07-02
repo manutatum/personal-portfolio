@@ -1,3 +1,4 @@
+import { DEFAULT } from "@react-three/fiber/dist/declarations/src/core/utils";
 import type { Config } from "tailwindcss";
 
 const svgToDataUri = require("mini-svg-data-uri");
@@ -26,6 +27,9 @@ const config = {
       },
     },
     extend: {
+      transitionDuration:{
+        DEFAULT: '250ms'
+      },
       colors: {
         black: {
           DEFAULT: "#000",
@@ -74,7 +78,7 @@ const config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
