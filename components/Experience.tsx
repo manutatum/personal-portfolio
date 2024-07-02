@@ -1,6 +1,6 @@
 import { workExperience } from "@/data"
 import { Button } from "./ui/MovingBorders"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 const Experience = () => {
     return (
@@ -18,12 +18,12 @@ const Experience = () => {
                             alt={thumbnail}
                             layout="intrinsic"
                             className="lg:2-32 md:w-20 w-16"
-                            width={60}
-                            height={60}
+                            width={150}
+                            height={150}
                             />
                             <div className="lg:ms-5">
-                                <h1 className="text-start text-xl md:text-2xl font-bold">{title}</h1>
-                                <p className="text-start text-white-100 mt-3 font-semibold">{desc}</p>
+                                <h1 className="text-center md:text-start text-xl md:text-2xl font-bold">{title}</h1>
+                                <p className="text-center md:text-start text-white-100 mt-3 font-semibold">{desc}</p>
                             </div>
                         </div>
                     </Button>

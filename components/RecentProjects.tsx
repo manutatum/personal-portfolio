@@ -1,7 +1,9 @@
+"use client";
+
 import { projects } from "@/data"
 import { PinContainer } from "./ui/3d-pin"
 import { FaLocationArrow } from "react-icons/fa"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 const RecentProjects = () => {
     return (
@@ -19,16 +21,14 @@ const RecentProjects = () => {
                                     <Image
                                         src="/bg.png"
                                         alt="bg-img"
-                                        fill
+                                        layout="fill"
                                         objectFit="cover"
                                     />
                                 </div>
                                 <Image
                                     src={img}
                                     alt={title}
-                                    layout="intrinsic"
-                                    width={450}
-                                    height={350}
+                                    layout="fill"
                                     className="z-10 absolute bottom-0"
                                 />
                             </div>
@@ -42,13 +42,15 @@ const RecentProjects = () => {
                             <div className="flex items-center justify-between mt-7 mb-3">
                                 <div className="flex items-center">
                                     {iconLists.map((icon, index) => (
-                                        <div key={icon} className="border border-white/[0.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center" style={{
+                                        <div key={icon} className="border border-white/[0.2] rounded-full bg-black-200 lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center" style={{
                                             transform: `translateX(-${5 * index * 2}px)`
                                         }}>
                                             <Image
                                                 src={icon}
                                                 alt={icon}
-                                                fill
+                                                layout="intrinsic"
+                                                width={20}
+                                                height={20}
                                                 objectFit="cover"
                                                 className="p-2"
                                             />

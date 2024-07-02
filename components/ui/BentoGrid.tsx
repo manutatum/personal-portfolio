@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import Lottie from "react-lottie";
@@ -9,7 +7,7 @@ import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 import { GlobeDemo } from "./GridGlobe";
 import { personalData } from "@/data";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export const BentoGrid = ({
   className,
@@ -86,9 +84,9 @@ export const BentoGridItem = ({
             <Image
               src={img}
               alt={img}
-              fill
-              style={{ objectFit: 'cover' }}
-              className={cn(imgClassName)}
+              layout="fill"
+              priority
+              className={cn(imgClassName, 'object-cover object-center')}
             />
           )}
         </div>
@@ -101,8 +99,8 @@ export const BentoGridItem = ({
               src={spareImg}
               alt={spareImg}
               layout="intrinsic"
-              width={50}
-              height={50}
+              width={180}
+              height={180}
             />
           )}
         </div>
@@ -116,7 +114,7 @@ export const BentoGridItem = ({
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
           )}
         >
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+          <div className="font-sans font-extralight md:max-w-44 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
             {description}
           </div>
           <div

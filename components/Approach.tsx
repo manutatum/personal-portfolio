@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
  
 import { AnimatePresence, motion } from "framer-motion";
@@ -14,7 +13,7 @@ const Approach = () => {
                 <Card 
                     title="Planning & Strategy"
                     icon={<AceternityIcon order='Phase 1'/>}
-                    description="description phase 1"
+                    description="Crafting meticulous plans and strategic roadmaps to align development initiatives with overarching business objectives."
                     >
                         <CanvasRevealEffect
                             animationSpeed={5.1}
@@ -24,7 +23,7 @@ const Approach = () => {
                 <Card
                 title="Development & Progress update"
                 icon={<AceternityIcon order='Phase 2'/>}
-                description="description phase 2"
+                description="Driving development forward with regular updates, ensuring transparency, and adapting strategies based on real-time progress."
                 >
                     <CanvasRevealEffect
                         animationSpeed={3}
@@ -40,7 +39,7 @@ const Approach = () => {
                     title="Development & Launch" 
                     icon={<AceternityIcon 
                     order='Phase 3'/>}
-                    description="description phase 3"
+                    description="Executing seamless transitions from development to launch phase, emphasizing quality assurance and stakeholder satisfaction."
                 >
                         <CanvasRevealEffect
                             animationSpeed={3}
