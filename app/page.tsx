@@ -7,17 +7,8 @@ import Hero from "@/components/Hero";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
-import { useEffect } from "react";
 
 export default function Home() {
-
-  useEffect(() => {
-
-    // Access document object here
-
-    console.log(document.title);
-
-  }, []);
 
   return (
     <main className="relative bg-black-100

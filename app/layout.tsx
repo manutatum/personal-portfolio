@@ -18,6 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/logo_claro.png"/>
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import Lottie from "react-lottie";
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import animationData from "@/data/confetti.json";
@@ -62,12 +61,14 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(personalData.email);
-    setCopied(true);
+    if (typeof window !== 'undefined') {
+      navigator.clipboard.writeText(personalData.email);
+      setCopied(true);
+    }
   };
 
   return (
-    <div
+    <section
       className={cn(
         "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
         className
@@ -79,7 +80,7 @@ export const BentoGridItem = ({
       }}
     >
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
-        <div className="w-full h-full absolute">
+        <section className="w-full h-full absolute">
           {img && (
             <Image
               src={img}
@@ -89,8 +90,8 @@ export const BentoGridItem = ({
               className={cn(imgClassName, 'object-cover object-center')}
             />
           )}
-        </div>
-        <div
+        </section>
+        <section
           className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
             } `}
         >
@@ -103,12 +104,12 @@ export const BentoGridItem = ({
               height={180}
             />
           )}
-        </div>
+        </section>
         {id === 6 && (
           <BackgroundGradientAnimation></BackgroundGradientAnimation>
         )}
 
-        <div
+        <section
           className={cn(
             titleClassName,
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
@@ -155,14 +156,13 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
-          {id === 6 && (
+          {typeof window !== 'undefined' && id === 6 && (
             <div className="mt-5 relative">
-              <div
+              <section
                 className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
                   }`}
               >
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
+              </section>
 
               <MagicButton
                 title={copied ? "Email is Copied!" : "Copy my email address"}
@@ -173,8 +173,8 @@ export const BentoGridItem = ({
               />
             </div>
           )}
-        </div>
+        </section>
       </div>
-    </div>
+    </section>
   );
 };
